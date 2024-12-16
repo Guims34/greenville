@@ -1,0 +1,2 @@
+# Mise à jour de l'état du jeu toutes les heures
+0 * * * * /usr/bin/php /path/to/greenville/includes/cron/update_game_state.php >> /path/to/greenville/logs/cron.log 2>&1
