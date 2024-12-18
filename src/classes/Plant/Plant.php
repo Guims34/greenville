@@ -12,10 +12,16 @@ class Plant {
     private int $nutrientsLevel = 100;
     private float $phLevel = 6.5;
     private int $growthTime;
+    private float $growthProgress = 0;
+    private int $gameDays = 0;
     private \DateTime $lastWatered;
-    private \DateTime $lastFed;
-    private \DateTime $nextFeeding;
+    private ?\DateTime $lastFed = null;
+    private ?\DateTime $nextFeeding = null;
     private \DateTime $createdAt;
+    private \DateTime $lastUpdate;
+    private float $ambientHumidity = 50.0;
+    private float $ambientTemperature = 20.0;
+    private ?int $irrigationSystemId = null;
 
     public function __construct(array $data) {
         $this->id = $data['id'] ?? 0;
@@ -23,90 +29,72 @@ class Plant {
         $this->name = $data['name'];
         $this->strain = $data['strain'];
         $this->growthTime = $data['growth_time'];
+        $this->growthProgress = $data['growth_progress'] ?? 0;
+        $this->gameDays = $data['game_days'] ?? 0;
+        $this->health = $data['health'] ?? 100;
+        $this->waterLevel = $data['water_level'] ?? 100;
+        $this->nutrientsLevel = $data['nutrients_level'] ?? 100;
+        $this->phLevel = $data['ph_level'] ?? 6.5;
+        $this->ambientHumidity = $data['ambient_humidity'] ?? 50.0;
+        $this->ambientTemperature = $data['ambient_temperature'] ?? 20.0;
+        $this->irrigationSystemId = $data['irrigation_system_id'] ?? null;
+        
+        // Initialisation des dates
         $this->lastWatered = new \DateTime($data['last_watered'] ?? 'now');
+        $this->lastFed = isset($data['last_fed']) ? new \DateTime($data['last_fed']) : null;
+        $this->nextFeeding = isset($data['next_feeding']) ? new \DateTime($data['next_feeding']) : null;
         $this->createdAt = new \DateTime($data['created_at'] ?? 'now');
+        $this->lastUpdate = new \DateTime($data['last_update'] ?? 'now');
     }
 
     public function updateGrowth(): void {
-        $age = $this->getAge();
-        $this->stage = $this->calculateStage($age);
-        $this->updateWaterLevel();
-        $this->updateNutrientsLevel();
-        $this->updateHealth();
-    }
-
-    public function water(): bool {
-        if ($this->waterLevel >= 100) {
-            return false;
-        }
+        $newGameDays = $this->calculateGameDays();
+        $daysElapsed = $newGameDays - $this->gameDays;
         
-        $this->waterLevel = 100;
-        $this->lastWatered = new \DateTime();
-        return true;
-    }
+        if ($daysElapsed > 0) {
+            $this->growthProgress = min(100, $this->growthProgress + 
+                ($this->calculateDailyGrowth() * $daysElapsed));
 
-    public function feed(): bool {
-        if ($this->nutrientsLevel >= 100) {
-            return false;
+            $this->waterLevel = max(0, $this->waterLevel - ($daysElapsed * 10));
+            $this->nutrientsLevel = max(0, $this->nutrientsLevel - ($daysElapsed * 5));
+
+            $this->gameDays = $newGameDays;
+            $this->stage = $this->calculateStage();
+            $this->updateHealth();
+            $this->lastUpdate = new \DateTime();
         }
-
-        $this->nutrientsLevel = 100;
-        $this->lastFed = new \DateTime();
-        $this->nextFeeding = (new \DateTime())->modify('+7 days');
-        return true;
     }
 
-    public function getProgress(): float {
-        $age = $this->getAge();
-        return min(100, ($age / $this->growthTime) * 100);
-    }
-
-    public function isReadyToHarvest(): bool {
-        return $this->getProgress() >= 100;
-    }
-
-    private function getAge(): int {
+    private function calculateGameDays(): int {
         $now = new \DateTime();
-        return $this->createdAt->diff($now)->days;
+        return (int)($now->getTimestamp() - $this->lastUpdate->getTimestamp()) / 3600;
     }
 
-    private function calculateStage(int $age): int {
-        $progress = ($age / $this->growthTime) * 100;
-        if ($progress < 25) return 1; // Germination
-        if ($progress < 50) return 2; // Végétation
-        if ($progress < 75) return 3; // Pré-floraison
-        if ($progress < 100) return 4; // Floraison
+    private function calculateDailyGrowth(): float {
+        $baseGrowth = 100 / $this->growthTime;
+        $healthMultiplier = $this->health / 100;
+        $waterMultiplier = $this->waterLevel / 100;
+        
+        return $baseGrowth * $healthMultiplier * $waterMultiplier;
+    }
+
+    private function calculateStage(): int {
+        if ($this->growthProgress < 25) return 1; // Germination
+        if ($this->growthProgress < 50) return 2; // Végétation
+        if ($this->growthProgress < 75) return 3; // Pré-floraison
+        if ($this->growthProgress < 100) return 4; // Floraison
         return 5; // Récolte
     }
 
-    private function updateWaterLevel(): void {
-        $hoursSinceWatered = (new \DateTime())->diff($this->lastWatered)->h;
-        $this->waterLevel = max(0, $this->waterLevel - ($hoursSinceWatered * 2));
-    }
-
-    private function updateNutrientsLevel(): void {
-        if (!$this->lastFed) return;
-        
-        $daysSinceFed = (new \DateTime())->diff($this->lastFed)->days;
-        $this->nutrientsLevel = max(0, $this->nutrientsLevel - ($daysSinceFed * 5));
-    }
-
     private function updateHealth(): void {
-        // Facteurs affectant la santé
-        if ($this->waterLevel < 30) {
-            $this->health -= 5;
-        }
-        if ($this->nutrientsLevel < 30) {
-            $this->health -= 3;
-        }
-        if ($this->phLevel < 5.5 || $this->phLevel > 7.5) {
-            $this->health -= 2;
-        }
+        $waterPenalty = $this->waterLevel < 30 ? 5 : 0;
+        $nutrientsPenalty = $this->nutrientsLevel < 30 ? 3 : 0;
+        $phPenalty = ($this->phLevel < 5.5 || $this->phLevel > 7.5) ? 2 : 0;
 
-        $this->health = max(0, min(100, $this->health));
+        $this->health = max(0, min(100, $this->health - $waterPenalty - $nutrientsPenalty - $phPenalty));
     }
 
-    // Getters
+    // Getters de base
     public function getId(): int { return $this->id; }
     public function getUserId(): int { return $this->userId; }
     public function getName(): string { return $this->name; }
@@ -116,4 +104,31 @@ class Plant {
     public function getWaterLevel(): int { return $this->waterLevel; }
     public function getNutrientsLevel(): int { return $this->nutrientsLevel; }
     public function getPhLevel(): float { return $this->phLevel; }
+    public function getGrowthProgress(): float { return $this->growthProgress; }
+    public function getGameDays(): int { return $this->gameDays; }
+    public function getLastUpdate(): \DateTime { return $this->lastUpdate; }
+    
+    // Getters pour les dates
+    public function getCreatedAt(): \DateTime { return $this->createdAt; }
+    public function getLastWatered(): \DateTime { return $this->lastWatered; }
+    public function getLastFed(): ?\DateTime { return $this->lastFed; }
+    public function getNextFeeding(): ?\DateTime { return $this->nextFeeding; }
+    
+    // Getters pour l'environnement
+    public function getAmbientHumidity(): float { return $this->ambientHumidity; }
+    public function getAmbientTemperature(): float { return $this->ambientTemperature; }
+    public function getIrrigationSystemId(): ?int { return $this->irrigationSystemId; }
+
+    // Setters pour l'environnement
+    public function setAmbientHumidity(float $humidity): void {
+        $this->ambientHumidity = max(0, min(100, $humidity));
+    }
+
+    public function setAmbientTemperature(float $temperature): void {
+        $this->ambientTemperature = max(10, min(35, $temperature));
+    }
+
+    public function setIrrigationSystemId(?int $systemId): void {
+        $this->irrigationSystemId = $systemId;
+    }
 }

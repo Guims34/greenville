@@ -1,0 +1,23 @@
+.notification {
+    transition: all 0.3s ease-out;
+    opacity: 1;
+    max-height: 500px;
+}
+
+.notification.hiding {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.close-button {
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.close-button:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.05);
+}

@@ -7797,3 +7797,315 @@ Stack trace:
 [16-Dec-2024 15:08:41 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\greenville\includes\navigation\admin_nav.php:2) in C:\xampp\htdocs\greenville\pages\new_plant.php on line 126
 [16-Dec-2024 15:13:08 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\greenville\includes\navigation\admin_nav.php:7) in C:\xampp\htdocs\greenville\pages\new_plant.php on line 136
 [16-Dec-2024 15:16:51 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\greenville\includes\navigation\admin_nav.php:7) in C:\xampp\htdocs\greenville\pages\new_plant.php on line 136
+[16-Dec-2024 15:58:21 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\greenville\includes\navigation\admin_nav.php:2) in C:\xampp\htdocs\greenville\pages\register.php on line 3
+[16-Dec-2024 15:58:30 Europe/Berlin] User logout - ID: 1, Session ID: 2kgf8h8the33ucvdjnr7m9n4ei
+[16-Dec-2024 15:58:30 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\greenville\includes\navigation\admin_nav.php:2) in C:\xampp\htdocs\greenville\pages\logout.php on line 16
+[16-Dec-2024 15:58:30 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\greenville\includes\navigation\admin_nav.php:2) in C:\xampp\htdocs\greenville\pages\logout.php on line 20
+[16-Dec-2024 15:58:32 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361112
+)
+
+[16-Dec-2024 15:58:32 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361112
+)
+
+[16-Dec-2024 15:58:32 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361112
+)
+
+[16-Dec-2024 15:58:32 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361112
+)
+
+[16-Dec-2024 15:58:36 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361116
+)
+
+[16-Dec-2024 15:58:36 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361116
+)
+
+[16-Dec-2024 15:58:36 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361116
+)
+
+[16-Dec-2024 15:58:36 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361116
+)
+
+[16-Dec-2024 15:58:36 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361116
+)
+
+[16-Dec-2024 15:58:39 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361119
+)
+
+[16-Dec-2024 15:58:39 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361119
+)
+
+[16-Dec-2024 15:58:39 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361119
+)
+
+[16-Dec-2024 15:58:39 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361119
+)
+
+[16-Dec-2024 15:58:39 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361119
+)
+
+[16-Dec-2024 15:58:42 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361122
+)
+
+[16-Dec-2024 15:58:42 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361122
+)
+
+[16-Dec-2024 15:58:42 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361122
+)
+
+[16-Dec-2024 15:58:42 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361122
+)
+
+[16-Dec-2024 15:58:43 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361123
+)
+
+[16-Dec-2024 15:58:43 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361123
+)
+
+[16-Dec-2024 15:58:43 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361123
+)
+
+[16-Dec-2024 15:58:43 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361123
+)
+
+[16-Dec-2024 15:58:43 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361123
+)
+
+[16-Dec-2024 15:58:45 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361125
+)
+
+[16-Dec-2024 15:58:45 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361125
+)
+
+[16-Dec-2024 15:58:45 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361125
+)
+
+[16-Dec-2024 15:58:45 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361125
+)
+
+[16-Dec-2024 15:58:46 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361126
+)
+
+[16-Dec-2024 15:58:46 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361126
+)
+
+[16-Dec-2024 15:58:46 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361126
+)
+
+[16-Dec-2024 15:58:46 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361126
+)
+
+[16-Dec-2024 15:58:46 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361126
+)
+
+[16-Dec-2024 15:58:48 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361128
+)
+
+[16-Dec-2024 15:58:48 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361128
+)
+
+[16-Dec-2024 15:58:48 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361128
+)
+
+[16-Dec-2024 15:58:48 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361128
+)
+
+[16-Dec-2024 15:58:49 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361129
+)
+
+[16-Dec-2024 15:58:49 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361129
+)
+
+[16-Dec-2024 15:58:49 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361129
+)
+
+[16-Dec-2024 15:58:49 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361129
+)
+
+[16-Dec-2024 15:58:49 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361129
+)
+
+[16-Dec-2024 15:58:53 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361133
+)
+
+[16-Dec-2024 15:58:53 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361133
+)
+
+[16-Dec-2024 15:58:53 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361133
+)
+
+[16-Dec-2024 15:58:53 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361133
+)
+
+[16-Dec-2024 15:58:53 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361133
+)
+
+[16-Dec-2024 15:58:56 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361136
+)
+
+[16-Dec-2024 15:58:56 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361136
+)
+
+[16-Dec-2024 15:58:56 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361136
+)
+
+[16-Dec-2024 15:58:56 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361136
+)
+
+[16-Dec-2024 15:58:56 Europe/Berlin] Session non authentifiée - Session actuelle : Array
+(
+    [last_regeneration] => 1734361112
+    [last_activity] => 1734361136
+)
+
+[16-Dec-2024 15:59:03 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\greenville\includes\navigation\admin_nav.php:2) in C:\xampp\htdocs\greenville\pages\login.php on line 7
+[16-Dec-2024 15:59:08 Europe/Berlin] PHP Warning:  Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\greenville\includes\navigation\admin_nav.php:2) in C:\xampp\htdocs\greenville\pages\register.php on line 3
