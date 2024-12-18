@@ -1,8 +1,8 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'greenville');
+define('DB_HOST', '185.207.226.14');
+define('DB_USER', 'qcdhfi_f0xxwstr_db');
+define('DB_PASS', 'I2%-5a7XB0w!_zcS');
+define('DB_NAME', 'qcdhfi_f0xxwstr_db');
 
 try {
     $db = new PDO(
